@@ -18,52 +18,71 @@ export function Header() {
   }, [])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? "bg-white shadow-md" : "bg-transparent"
-    }`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-white/95 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
       <nav className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link href="/" className={`flex items-center transition-opacity duration-300 ${isScrolled ? "opacity-100" : "lg:opacity-100 opacity-0"}`}>
+          <Link
+            href="/"
+            className={`flex items-center transition-all duration-500 ${
+              isScrolled
+                ? "opacity-100 scale-100"
+                : "lg:opacity-100 opacity-0 scale-95"
+            }`}
+          >
             <Image
               src="/logo.png"
               alt="Heaven Management"
-              width={120}
-              height={44}
+              width={140}
+              height={52}
               className="object-contain"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-12">
             <Link
               href="#accueil"
-              className={`text-sm font-medium transition-colors ${
-                isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+              className={`text-sm font-bold tracking-widest uppercase transition-all duration-300 hover:gap-2 inline-flex items-center gap-1 ${
+                isScrolled
+                  ? "text-foreground hover:text-primary"
+                  : "text-white hover:text-white/80"
               }`}
             >
               Accueil
             </Link>
             <Link
               href="#services"
-              className={`text-sm font-medium transition-colors ${
-                isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+              className={`text-sm font-bold tracking-widest uppercase transition-all duration-300 hover:gap-2 inline-flex items-center gap-1 ${
+                isScrolled
+                  ? "text-foreground hover:text-primary"
+                  : "text-white hover:text-white/80"
               }`}
             >
-              Nos Services
+              Services
             </Link>
             <Link
               href="#apropos"
-              className={`text-sm font-medium transition-colors ${
-                isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+              className={`text-sm font-bold tracking-widest uppercase transition-all duration-300 hover:gap-2 inline-flex items-center gap-1 ${
+                isScrolled
+                  ? "text-foreground hover:text-primary"
+                  : "text-white hover:text-white/80"
               }`}
             >
               À Propos
             </Link>
             <Link
               href="#contact"
-              className={`text-sm font-medium transition-colors ${
-                isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+              className={`text-sm font-bold tracking-widest uppercase transition-all duration-300 hover:gap-2 inline-flex items-center gap-1 ${
+                isScrolled
+                  ? "text-foreground hover:text-primary"
+                  : "text-white hover:text-white/80"
               }`}
             >
               Contact
@@ -74,16 +93,20 @@ export function Header() {
           <div className="hidden md:flex items-center">
             <Link
               href="#contact"
-              className={`group flex items-center gap-3 px-5 py-3 rounded-full text-sm font-medium transition-all ${
+              className={`group relative inline-flex items-center gap-4 px-8 py-4 rounded-full text-sm font-bold tracking-widest uppercase overflow-hidden transition-all duration-500 ${
                 isScrolled
-                  ? "bg-primary text-white hover:bg-primary/90"
-                  : "bg-white text-foreground hover:bg-white/90"
+                  ? "bg-primary text-primary-foreground hover:bg-foreground hover:text-white"
+                  : "bg-white text-foreground hover:bg-primary hover:text-primary-foreground"
               }`}
             >
-              Démarrer mon projet
-              <span className={`w-8 h-8 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform ${
-                isScrolled ? "bg-white text-foreground" : "bg-foreground text-white"
-              }`}>
+              <span className="relative z-10">Démarrer</span>
+              <span
+                className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-45 relative z-10 ${
+                  isScrolled
+                    ? "bg-primary-foreground text-primary"
+                    : "bg-foreground text-white"
+                }`}
+              >
                 <ArrowRight className="w-4 h-4" />
               </span>
             </Link>
@@ -91,8 +114,10 @@ export function Header() {
 
           {/* Mobile menu button */}
           <button
-            className={`lg:hidden p-2 transition-colors ${
-              isScrolled ? "text-foreground" : "text-white"
+            className={`lg:hidden p-3 transition-all duration-300 rounded-full ${
+              isScrolled
+                ? "text-foreground hover:bg-muted"
+                : "text-white hover:bg-white/10"
             }`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
@@ -103,32 +128,32 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-6 bg-white border-t border-gray-200">
+          <div className="lg:hidden py-8 bg-white border-t border-gray-100 animate-slide-down">
             <div className="flex flex-col gap-6">
               <Link
                 href="#accueil"
-                className="text-foreground hover:text-primary transition-colors"
+                className="text-foreground font-bold tracking-widest uppercase text-lg hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Accueil
               </Link>
               <Link
                 href="#services"
-                className="text-foreground hover:text-primary transition-colors"
+                className="text-foreground font-bold tracking-widest uppercase text-lg hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Nos Services
+                Services
               </Link>
               <Link
                 href="#apropos"
-                className="text-foreground hover:text-primary transition-colors"
+                className="text-foreground font-bold tracking-widest uppercase text-lg hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 À Propos
               </Link>
               <Link
                 href="#contact"
-                className="text-foreground hover:text-primary transition-colors"
+                className="text-foreground font-bold tracking-widest uppercase text-lg hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
@@ -136,10 +161,10 @@ export function Header() {
               <Link
                 href="#contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center justify-center gap-3 bg-foreground text-background px-5 py-3 rounded-full text-sm font-medium mt-2"
+                className="inline-flex items-center justify-center gap-4 bg-foreground text-background px-8 py-5 rounded-full text-sm font-bold tracking-widest uppercase mt-4"
               >
                 Démarrer mon projet
-                <span className="w-8 h-8 bg-background text-foreground rounded-full flex items-center justify-center">
+                <span className="w-10 h-10 bg-background text-foreground rounded-full flex items-center justify-center">
                   <ArrowRight className="w-4 h-4" />
                 </span>
               </Link>
