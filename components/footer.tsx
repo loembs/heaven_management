@@ -33,7 +33,7 @@ export function Footer() {
               />
             </div>
             <p className="text-secondary-foreground/70 max-w-md leading-relaxed text-lg mb-6">
-              Votre entreprise, managée de A à Z. Propriété intellectuelle, juridique, comptabilité, formalités, communication — un seul interlocuteur pour toutes vos bases business.
+              Votre entreprise, managée de A à Z. Propriété intellectuelle,Création et formalisation d'entreprise, Comptabilité d'entreprise de base , Accompagnement juridique, communication , un seul interlocuteur pour toutes vos bases business.
             </p>
             <ParenthesizedElement className="text-secondary-foreground/50">
               <span className="text-xs tracking-widest font-bold uppercase">Dakar, Sénégal</span>
@@ -72,7 +72,7 @@ export function Footer() {
             <h4 className="font-black text-white mb-6 text-lg tracking-tight">Contact</h4>
             <ul className="space-y-4 text-secondary-foreground/70">
               <li className="font-medium">+221 788 909 451</li>
-              <li className="font-medium">Sacré-Coeur 3, Dakar</li>
+              <li className="font-medium">Mamelles Cité Mbackiyou Faye, Dakar Sénégal</li>
               <li className="font-medium">Lun-Ven, 9h-17h</li>
             </ul>
           </div>

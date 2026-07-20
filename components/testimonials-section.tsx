@@ -13,7 +13,7 @@ const testimonials = [
     color: "primary",
   },
   {
-    quote: "En 3 mois, ma marque était protégée, mes contrats rédigés et ma comptabilité organisée. Efficacité redoutable.",
+    quote: "En 7 mois, ma marque était protégée, mes contrats rédigés et ma comptabilité organisée. Efficacité redoutable.",
     author: "Mamadou S.",
     role: "Développeur freelance",
     initials: "MS",

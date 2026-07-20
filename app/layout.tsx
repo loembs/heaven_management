@@ -10,16 +10,16 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Heaven Management | Votre entreprise, managée de A à Z',
-  description: 'Propriété intellectuelle, juridique, comptabilité, formalités, communication — un seul interlocuteur pour toutes vos bases business à Dakar, Sénégal.',
+  description: 'Propriété intellectuelle,Création et formalisation d\'entreprise , Comptabilité d\'entreprise de base, Accompagnement juridique, communication , un seul interlocuteur pour toutes vos bases business à Dakar, Sénégal.',
   generator: 'v0.app',
   icons: {
     icon: '/logo.jpeg',
     apple: '/logo.jpeg',
   },
-  keywords: ['gestion entreprise', 'propriété intellectuelle', 'création entreprise', 'comptabilité', 'juridique', 'Dakar', 'Sénégal', 'OAPI'],
+  keywords: ['propriété intellectuelle', 'création entreprise', 'comptabilité', 'juridique', 'Dakar', 'Sénégal'],
   openGraph: {
     title: 'Heaven Management | Votre entreprise, managée de A à Z',
-    description: 'Propriété intellectuelle, juridique, comptabilité, formalités, communication — un seul interlocuteur pour toutes vos bases business.',
+    description: 'Propriété intellectuelle,Création et formalisation d\'entreprise , Comptabilité d\'entreprise de base, Accompagnement juridique, communication , un seul interlocuteur pour toutes vos bases business.',
     locale: 'fr_SN',
   },
 }

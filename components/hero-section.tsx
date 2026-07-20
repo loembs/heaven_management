@@ -103,29 +103,29 @@ export function HeroSection() {
               </div>
             </h1>
 
-            {/* Animated line */}
+            {/* Animated line 
             <div className="my-10">
               <AnimatedLine className="w-48" />
             </div>
 
-            {/* Subheadline */}
             <FloatingElement delay={800}>
               <p className="text-xl md:text-2xl text-white/80 max-w-2xl leading-relaxed mb-12">
-                Propriété intellectuelle, juridique, comptabilité, formalités,
+                Propriété intellectuelle,Création et formalisation d'entreprise, Comptabilité d'entreprise de base, Accompagnement juridique,
                 <span className="text-primary font-bold"> communication</span> un seul interlocuteur pour toutes vos bases business.
               </p>
             </FloatingElement>
+            */}
 
             {/* CTA Buttons with creative styling */}
-            <div className="flex flex-col sm:flex-row gap-6 items-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center">
               <FloatingElement delay={1000}>
                 <Link
                   href="#contact"
-                  className="group relative inline-flex items-center gap-4 bg-white text-foreground px-8 py-5 rounded-full text-lg font-bold hover:bg-primary hover:text-white transition-all duration-500 overflow-hidden"
+                  className="group relative inline-flex items-center gap-3 sm:gap-4 bg-white text-foreground px-5 py-3 sm:px-8 sm:py-5 rounded-full text-base sm:text-lg font-bold hover:bg-primary hover:text-white transition-all duration-500 overflow-hidden"
                 >
                   <span className="relative z-10">Obtenir mon devis gratuit</span>
-                  <span className="w-12 h-12 bg-foreground text-white rounded-full flex items-center justify-center group-hover:bg-white group-hover:scale-110 transition-all duration-300 z-10">
-                    <ArrowRight className="w-5 h-5" />
+                  <span className="w-10 h-10 sm:w-12 sm:h-12 bg-foreground text-white rounded-full flex items-center justify-center group-hover:bg-white group-hover:scale-110 transition-all duration-300 z-10">
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                   </span>
                   {/* Hover effect */}
                   <div className="absolute inset-0 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
@@ -135,11 +135,11 @@ export function HeroSection() {
               <FloatingElement delay={1200}>
                 <Link
                   href="#services"
-                  className="group inline-flex items-center gap-4 border-2 border-white/50 text-white px-8 py-5 rounded-full text-lg font-bold hover:bg-white hover:text-foreground transition-all duration-500"
+                  className="group inline-flex items-center gap-3 sm:gap-4 border-2 border-white/50 text-white px-5 py-3 sm:px-8 sm:py-5 rounded-full text-base sm:text-lg font-bold hover:bg-white hover:text-foreground transition-all duration-500"
                 >
                   Découvrir nos services
-                  <span className="w-12 h-12 border-2 border-white/50 rounded-full flex items-center justify-center group-hover:border-foreground group-hover:rotate-45 transition-all duration-300">
-                    <ArrowRight className="w-5 h-5" />
+                  <span className="w-10 h-10 sm:w-12 sm:h-12 border-2 border-white/50 rounded-full flex items-center justify-center group-hover:border-foreground group-hover:rotate-45 transition-all duration-300">
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                   </span>
                 </Link>
               </FloatingElement>
@@ -171,7 +171,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator 
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
         <AnimatedLine className="w-24" />
         <div className="text-white/60 animate-bounce">
@@ -179,8 +179,8 @@ export function HeroSection() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>
-        <span className="text-white/60 text-xs tracking-widest uppercase">Scroll to explore</span>
-      </div>
+        
+      </div>*/}
     </section>
   )
 }
