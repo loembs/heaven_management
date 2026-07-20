@@ -175,6 +175,22 @@ export function AboutSection() {
               <div className="w-32 mb-8">
                 <AnimatedLine />
               </div>
+
+              {/* Mission statement */}
+              <div className="max-w-3xl space-y-6">
+                <p className="text-xl lg:text-2xl text-foreground leading-relaxed">
+                  Chez Heaven Management, on ne croit pas au parcours du combattant administratif.
+                </p>
+                <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
+                  Juristes, comptables, communicants : une équipe pluridisciplinaire réunie autour d'une conviction — chaque entrepreneur mérite un interlocuteur unique qui comprend son business dans sa globalité.
+                </p>
+                <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
+                  Protection de vos idées, création d'entreprise, finances, image de marque : on centralise tout, avec clarté et transparence.
+                </p>
+                <p className="text-lg lg:text-xl text-primary font-bold">
+                  Pas de jargon. Pas de prix opaques. Juste les bases solides pour durer et rayonner.
+                </p>
+              </div>
             </FloatingElement>
           </div>
         </div>
