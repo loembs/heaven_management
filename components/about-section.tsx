@@ -182,7 +182,7 @@ export function AboutSection() {
                   Chez Heaven Management, on ne croit pas au parcours du combattant administratif.
                 </p>
                 <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                  Juristes, comptables, communicants : une équipe pluridisciplinaire réunie autour d'une conviction — chaque entrepreneur mérite un interlocuteur unique qui comprend son business dans sa globalité.
+                  Juristes, comptables, communicants : une équipe pluridisciplinaire réunie autour d'une conviction ,chaque entrepreneur mérite un interlocuteur unique qui comprend son business dans sa globalité.
                 </p>
                 <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
                   Protection de vos idées, création d'entreprise, finances, image de marque : on centralise tout, avec clarté et transparence.
