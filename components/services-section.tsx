@@ -168,62 +168,32 @@ export function ServicesSection() {
                 <div
                   className={`group relative rounded-[2rem] p-10 overflow-hidden transition-all duration-500 hover:scale-[1.02] cursor-pointer ${
                     isPrimary
-                      ? "bg-foreground text-background"
-                      : "bg-white text-foreground border-2 border-border"
+                      ? "bg-primary text-white"
+                      : "bg-secondary text-white"
                   }`}
                 >
                   {/* Background decorative cross */}
-                  <div
-                    className={`absolute -bottom-10 -right-10 opacity-10 transition-transform duration-500 group-hover:rotate-90 ${
-                      isPrimary ? "text-background" : "text-foreground"
-                    }`}
-                  >
+                  <div className="absolute -bottom-10 -right-10 opacity-10 transition-transform duration-500 group-hover:rotate-90 text-white">
                     <CreativeCross className="w-40 h-40" />
                   </div>
 
                   {/* Icon */}
-                  <div
-                    className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-8 transition-transform duration-300 group-hover:scale-110 ${
-                      isPrimary
-                        ? "bg-background/20"
-                        : "bg-foreground/10"
-                    }`}
-                  >
-                    <Icon
-                      className={`h-10 w-10 ${
-                        isPrimary ? "text-background" : "text-foreground"
-                      }`}
-                    />
+                  <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-8 transition-transform duration-300 group-hover:scale-110 bg-white/20">
+                    <Icon className="h-10 w-10 text-white" />
                   </div>
 
                   {/* Content */}
-                  <h3
-                    className={`text-2xl font-black mb-3 ${
-                      isPrimary ? "text-background" : "text-foreground"
-                    }`}
-                  >
+                  <h3 className="text-2xl font-black mb-3 text-white">
                     {service.title}
                   </h3>
-                  <p
-                    className={`text-xs font-bold tracking-widest uppercase mb-6 ${
-                      isPrimary ? "text-background/60" : "text-muted-foreground"
-                    }`}
-                  >
+                  <p className="text-xs font-bold tracking-widest uppercase mb-6 text-white/60">
                     {service.subtitle}
                   </p>
 
-                  <ul
-                    className={`space-y-3 mb-8 ${
-                      isPrimary ? "text-background/80" : "text-muted-foreground"
-                    }`}
-                  >
+                  <ul className="space-y-3 mb-8 text-white/80">
                     {service.features.map((feature, i) => (
                       <li key={i} className="text-sm flex items-start gap-3">
-                        <span
-                          className={`mt-1 text-lg ${
-                            isPrimary ? "text-background" : "text-primary"
-                          }`}
-                        >
+                        <span className="mt-1 text-lg text-white">
                           ●
                         </span>
                         {feature}
@@ -232,25 +202,13 @@ export function ServicesSection() {
                   </ul>
 
                   {/* Price & CTA */}
-                  <div
-                    className={`pt-6 border-t ${
-                      isPrimary ? "border-background/20" : "border-border/50"
-                    }`}
-                  >
-                    <p
-                      className={`font-black text-2xl mb-4 ${
-                        isPrimary ? "text-background" : "text-primary"
-                      }`}
-                    >
+                  <div className="pt-6 border-t border-white/20">
+                    <p className="font-black text-2xl mb-4 text-white">
                       {service.price}
                     </p>
                     <Link
                       href="#contact"
-                      className={`inline-flex items-center gap-2 text-sm font-bold transition-all duration-300 group-hover:gap-4 ${
-                        isPrimary
-                          ? "text-background"
-                          : "text-foreground"
-                      }`}
+                      className="inline-flex items-center gap-2 text-sm font-bold transition-all duration-300 group-hover:gap-4 text-white"
                     >
                       Demander un devis
                       <ArrowRight className="w-4 h-4" />
