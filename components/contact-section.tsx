@@ -1,25 +1,14 @@
 "use client"
 
-import { useState } from "react"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+import { Phone, MapPin, Clock, Calendar, Mail } from "lucide-react"
+import Link from "next/link"
+import { CreativeCross, ParenthesizedElement, FloatingElement, AnimatedLine, HeavenWatermark } from "./creative-elements"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { ArrowRight, Phone, MapPin, Clock, Mail } from "lucide-react"
-import Link from "next/link"
-import { CreativeCross, ParenthesizedElement, FloatingElement, AnimatedLine, HeavenWatermark } from "./creative-elements"
 
 const faqs = [
   {
@@ -36,34 +25,7 @@ const faqs = [
   },
 ]
 
-const services = [
-  "Propriété intellectuelle",
-  "Création et formalisation d'entreprise",
-  "Accompagnement Juridique ",
-  "Comptabilité d'entreprises de bases",
-  "Communication",
-]
-
 export function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    service: "",
-    message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setIsSubmitting(false)
-    setSubmitted(true)
-    setFormData({ name: "", phone: "", email: "", service: "", message: "" })
-  }
-
   return (
     <section id="contact" className="py-32 lg:py-48 bg-background relative overflow-hidden">
       {/* Background decorative pattern */}
@@ -118,7 +80,7 @@ export function ContactSection() {
                 <AnimatedLine />
               </div>
               <p className="text-2xl text-muted-foreground max-w-2xl leading-relaxed">
-                Consultation gratuite de 30 minutes ,on définit ensemble votre feuille de route.
+                Consultation gratuite de 30 minutes, on définit ensemble votre feuille de route.
               </p>
             </FloatingElement>
           </div>
@@ -139,6 +101,19 @@ export function ContactSection() {
                     <p className="font-black text-xl">+221 788 909 451</p>
                   </div>
                 </div>
+
+                <a
+                  href="mailto:contact@heaven-management.com"
+                  className="group flex items-center gap-5 p-6 bg-muted rounded-2xl hover:bg-foreground hover:text-background transition-all duration-500"
+                >
+                  <div className="w-14 h-14 bg-background rounded-full flex items-center justify-center shrink-0 group-hover:bg-background/20 group-hover:scale-110 transition-all duration-300">
+                    <Mail className="h-6 w-6 text-primary group-hover:text-background" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold tracking-widest uppercase opacity-70 mb-1">Email</p>
+                    <p className="font-black text-xl">contact@heaven-management.com</p>
+                  </div>
+                </a>
 
                 <div className="group flex items-center gap-5 p-6 bg-muted rounded-2xl hover:bg-foreground hover:text-background transition-all duration-500 cursor-default">
                   <div className="w-14 h-14 bg-background rounded-full flex items-center justify-center shrink-0 group-hover:bg-background/20 group-hover:scale-110 transition-all duration-300">
@@ -189,145 +164,44 @@ export function ContactSection() {
             </div>
           </FloatingElement>
 
-          {/* Right column - Form */}
+          {/* Right column - Calendly Booking */}
           <FloatingElement delay={500}>
-            <div className="bg-muted rounded-[2rem] p-10 lg:p-12 relative overflow-hidden">
+            <div className="bg-muted rounded-[2rem] p-10 lg:p-12 relative overflow-hidden h-full flex flex-col justify-center">
               {/* Decorative cross */}
               <div className="absolute -bottom-10 -right-10 text-foreground/5">
                 <CreativeCross className="w-48 h-48" delay={700} />
               </div>
 
-              {submitted ? (
-                <div className="text-center py-20">
-                  <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
-                    <svg
-                      className="w-12 h-12 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-3xl font-black text-foreground mb-3">
-                    Message envoyé !
-                  </h3>
-                  <p className="text-muted-foreground text-lg mb-10">
-                    Nous vous recontacterons dans les 24h.
-                  </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="text-primary font-bold hover:underline text-lg"
-                  >
-                    Envoyer un autre message
-                  </button>
+              <div className="relative z-10 text-center space-y-8">
+                {/* Calendar icon */}
+                <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Calendar className="h-12 w-12 text-primary" />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-7 relative z-10">
-                  <div>
-                    <Label htmlFor="name" className="text-foreground text-sm font-bold tracking-widest uppercase">
-                      Nom & Prénom
-                    </Label>
-                    <Input
-                      id="name"
-                      placeholder="Votre nom"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
-                      className="mt-3 bg-background border-0 rounded-2xl h-14 text-base"
-                    />
-                  </div>
 
-                  <div className="grid sm:grid-cols-2 gap-5">
-                    <div>
-                      <Label htmlFor="phone" className="text-foreground text-sm font-bold tracking-widest uppercase">
-                        Téléphone
-                      </Label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        placeholder="+221 ..."
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        required
-                        className="mt-3 bg-background border-0 rounded-2xl h-14 text-base"
-                      />
-                    </div>
+                <h3 className="text-3xl font-black text-foreground">
+                  Réservez votre appel
+                </h3>
 
-                    <div>
-                      <Label htmlFor="email" className="text-foreground text-sm font-bold tracking-widest uppercase">
-                        Email
-                      </Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="votre@email.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        required
-                        className="mt-3 bg-background border-0 rounded-2xl h-14 text-base"
-                      />
-                    </div>
-                  </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Choisissez le créneau qui vous convient le mieux. Une consultation gratuite de 30 minutes pour discuter de votre projet.
+                </p>
 
-                  <div>
-                    <Label htmlFor="service" className="text-foreground text-sm font-bold tracking-widest uppercase">
-                      Service souhaité
-                    </Label>
-                    <Select
-                      value={formData.service}
-                      onValueChange={(value) => setFormData({ ...formData, service: value })}
-                    >
-                      <SelectTrigger className="mt-3 bg-background border-0 rounded-2xl h-14 text-base">
-                        <SelectValue placeholder="Sélectionnez un service" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {services.map((service) => (
-                          <SelectItem key={service} value={service}>
-                            {service}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
+                <Link
+                  href="https://calendly.com/heavenmanagement74/30min"
+                  target="_blank"
+                  className="inline-flex items-center gap-4 bg-primary text-primary-foreground px-10 py-6 rounded-full text-lg font-bold hover:bg-secondary hover:text-white transition-all duration-500 group"
+                >
+                  <Calendar className="w-5 h-5" />
+                  Réserver un appel 30min
+                  <span className="w-12 h-12 bg-primary-foreground text-primary rounded-full flex items-center justify-center group-hover:rotate-45 group-hover:scale-110 transition-all duration-300">
+                    →
+                  </span>
+                </Link>
 
-                  <div>
-                    <Label htmlFor="message" className="text-foreground text-sm font-bold tracking-widest uppercase">
-                      Votre message
-                    </Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Décrivez votre projet..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      rows={5}
-                      className="mt-3 bg-background border-0 rounded-2xl resize-none text-base"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="group w-full flex items-center justify-center gap-4 bg-foreground text-background px-8 py-5 rounded-full text-base font-bold hover:bg-primary hover:text-primary-foreground transition-all duration-500 disabled:opacity-50"
-                  >
-                    {isSubmitting ? (
-                      "Envoi en cours..."
-                    ) : (
-                      <>
-                        Envoyer ma demande
-                        <span className="w-12 h-12 bg-background text-foreground rounded-full flex items-center justify-center group-hover:rotate-45 group-hover:scale-110 transition-all duration-300">
-                          <ArrowRight className="w-5 h-5" />
-                        </span>
-                      </>
-                    )}
-                  </button>
-                </form>
-              )}
+                <p className="text-sm text-muted-foreground">
+                  Pas de création de compte requise • Confirmation instantanée
+                </p>
+              </div>
             </div>
           </FloatingElement>
         </div>

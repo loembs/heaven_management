@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { CreativeCross, ParenthesizedElement } from "./creative-elements"
+import { Mail } from "lucide-react"
 
 export function Footer() {
   return (
@@ -71,7 +72,23 @@ export function Footer() {
           <div>
             <h4 className="font-black text-white mb-6 text-lg tracking-tight">Contact</h4>
             <ul className="space-y-4 text-secondary-foreground/70">
-              <li className="font-medium">+221 788 909 451</li>
+              <li>
+                <a
+                  href="tel:+221788909451"
+                  className="font-medium hover:text-white transition-colors flex items-center gap-2"
+                >
+                  +221 788 909 451
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:contact@heaven-management.com"
+                  className="font-medium hover:text-white transition-colors flex items-center gap-2"
+                >
+                  <Mail className="w-4 h-4" />
+                  contact@heaven-management.com
+                </a>
+              </li>
               <li className="font-medium">Mamelles Cité Mbackiyou Faye, Dakar Sénégal</li>
               <li className="font-medium">Lun-Ven, 9h-17h</li>
             </ul>
